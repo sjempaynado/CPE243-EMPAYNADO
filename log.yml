@@ -1,0 +1,10 @@
+---
+- name: Collect log files
+  hosts: remote_servers
+  tasks:
+    - name: Collect Log Files
+      fetch:
+        src: /var/log/syslog
+        dest: /home/sempaynado/
+        flat: yes
+      register: syslog_result
